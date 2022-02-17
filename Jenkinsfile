@@ -15,6 +15,7 @@ pipeline {
                sh '''
                pwd
                ls -l
+               ps -eaf 
                '''
             }
         }    
