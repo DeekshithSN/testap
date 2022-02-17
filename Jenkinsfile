@@ -1,8 +1,5 @@
 pipeline {
-    agent {
-         docker {image 'maven'}
-    }
-
+    agent none
     environment{
         VERSION = "${env.BUILD_ID}"
     }
