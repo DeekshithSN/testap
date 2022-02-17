@@ -7,6 +7,10 @@ pipeline {
         VERSION = "${env.BUILD_ID}"
     }
     
+    options{
+    buildDiscarder(logRotator(numToKeepStr: '1')) }
+    }
+    
     stages {
         stage('Hello') {
             
