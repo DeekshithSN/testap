@@ -29,6 +29,11 @@ pipeline {
         failure{
         echo "job is failed"
         }
+        
+        always{
+            
+          cleanWs()
+        }
     
     }
     
