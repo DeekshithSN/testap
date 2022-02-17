@@ -19,7 +19,7 @@ pipeline {
             }
         }
         
-         stage('Hello') {
+         stage('test') {
           
             
             steps {
