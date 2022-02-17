@@ -9,6 +9,7 @@ pipeline {
     
     options{
     buildDiscarder(logRotator(numToKeepStr: '1')) 
+     timeout(time: 1, unit: 'MINUTES') 
     }
     
     stages {
@@ -20,6 +21,7 @@ pipeline {
             
             steps {
                sh 'printenv'
+                sleep 120
             }
         }
         
