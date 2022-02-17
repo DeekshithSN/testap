@@ -20,8 +20,10 @@ pipeline {
               }
             
             steps {
-               sh 'printenv'
-                sleep 120
+              timeout(time: 30, unit: 'SECONDS') {
+                   sleep 35
+                }
+                                
             }
         }
         
