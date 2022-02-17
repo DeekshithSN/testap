@@ -8,6 +8,13 @@ pipeline {
             steps {
                sh 'mvn -version'
             }
+            
+            post { 
+                always { 
+            echo 'I will always say Hello again!'
+                }
+            }
+
         }
         
         stage('Hello2') {
