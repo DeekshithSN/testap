@@ -7,6 +7,8 @@ pipeline {
         VERSION = "${env.BUILD_ID}"
     }
     
+    parameters { string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: '') }
+    
     options{
     buildDiscarder(logRotator(numToKeepStr: '1')) 
      timeout(time: 1, unit: 'MINUTES') 
