@@ -9,6 +9,19 @@ pipeline {
     
     stages {
         stage('Hello') {
+            
+            environment{
+               phase1 = "firststage"
+              }
+            
+            steps {
+               sh 'printenv'
+            }
+        }
+        
+         stage('Hello') {
+          
+            
             steps {
                sh 'printenv'
             }
