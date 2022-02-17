@@ -7,7 +7,11 @@ pipeline {
         VERSION = "${env.BUILD_ID}"
     }
     
-    parameters { string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: '') }
+    parameters {
+        booleanParam(name: 'DEBUG_BUILD', defaultValue: true, description: '')
+        string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: '') 
+        choice(name: 'CHOICES', choices: ['one', 'two', 'three'], description: '') 
+    }
     
     options{
     buildDiscarder(logRotator(numToKeepStr: '1')) 
@@ -22,9 +26,10 @@ pipeline {
               }
             
             steps {
-              timeout(time: 30, unit: 'SECONDS') {
-                   sleep 35
-                }
+              
+                  echo "$DEBUG_BUILD"
+                echo "$DEPLOY_ENV"
+                echo "${params.CHOICES}"
                                 
             }
         }
