@@ -15,11 +15,20 @@ pipeline {
                sh '''
                pwd
                ls -l
-               ps -eaf
                '''
             }
+        }    
+    }
+    post{
+        success{
+        echo "Job is success"
+         cleanWs()
         }
         
-        
+        failure{
+        echo "job is failed"
+        }
+    
     }
+    
 }
