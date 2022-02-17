@@ -27,8 +27,8 @@ pipeline {
             
             steps {
               
-                  echo "$DEBUG_BUILD"
-                echo "$DEPLOY_ENV"
+                echo "${params.DEBUG_BUILD}"
+                echo "${params.DEPLOY_ENV}"
                 echo "${params.CHOICES}"
                                 
             }
