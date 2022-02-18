@@ -10,6 +10,8 @@ pipeline {
         choice(name: 'CHOICES', choices: ['one', 'two', 'three'], description: '') 
     }
     
+    triggers { cron('H */4 * * 1-5') }
+    
     options{
     buildDiscarder(logRotator(numToKeepStr: '1')) 
      timeout(time: 1, unit: 'MINUTES') 
