@@ -20,6 +20,8 @@ pipeline {
     stages {
         
         stage('Example') {
+            
+            when { equals expected: 2, actual: currentBuild.number }
             input {
                 message "Should we continue?"
                 ok "Yes, we should."
