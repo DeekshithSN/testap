@@ -21,7 +21,8 @@ pipeline {
         
         stage('Example') {
             
-            when { equals expected: 2, actual: currentBuild.number }
+//             when { equals expected: 2, actual: currentBuild.number }
+            when { expression {  params.DEPLOY_ENV == "prod" } }
             input {
                 message "Should we continue?"
                 ok "Yes, we should."
